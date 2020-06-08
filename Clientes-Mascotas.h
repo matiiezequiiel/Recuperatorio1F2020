@@ -209,4 +209,5 @@ void mostrarClientesConLocalidad(eCliente[],int,eMascota[],int,eRaza[],int,eLoca
 int altaClienteConLocalidad(eCliente[],int,eLocalidad[],int );
 int cargarCamposClienteConLocalidad(eCliente listaClientes[],int posicionLibre,eLocalidad[],int);
 void listarClientesMascotasMismoTipo(eMascota [],int ,eCliente  [],int ,eLocalidad [],int );
+void mostrarClientesSegunLocalidad(eCliente [] ,int ,eLocalidad [],int );
 

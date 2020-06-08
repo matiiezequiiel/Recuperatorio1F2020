@@ -217,8 +217,12 @@ int main()
             listarClientesMascotasMismoTipo(mascotas,TMASCOTA,clientes,TCLIENTE,localidad,TLOCALIDAD);
             break;
         case 20:
+           mostrarClientesSegunLocalidad(clientes,TCLIENTE,localidad,TLOCALIDAD);
+            break;
+        case 21:
             system("cls");
             printf("Gracias por haber usado esta aplicacion. ");
+            break;
             break;
 
         }

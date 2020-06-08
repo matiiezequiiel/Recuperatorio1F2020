@@ -1335,3 +1335,24 @@ void listarClientesMascotasMismoTipo(eMascota listadoMascotas[],int sizeMascotas
     system("pause");
 
 }
+
+ void mostrarClientesSegunLocalidad(eCliente listadoClientes[] ,int sizeCliente,eLocalidad localidades[],int sizeLocalidad)
+ {
+     int idOpcion;
+     int i;
+
+
+     mostrarLocalidades(localidades,sizeLocalidad);
+     printf("Ingrese id de la localidad: \n");
+     scanf("%d",&idOpcion);
+
+    for(i=0;i<sizeCliente;i++)
+    {
+        if(listadoClientes[i].idLocalidad==idOpcion)
+        {
+            printf("%s--%s\n", listadoClientes[i].nombre,listadoClientes[i].apellido);
+        }
+    }
+
+
+ }
