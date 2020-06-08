@@ -2,7 +2,7 @@ typedef struct
 {
     char nombre [20];
     char apellido [20];
-    char localidad [20];
+    int localidad ;
     char telefono[10];
     int edad;
     char sexo;
@@ -25,7 +25,7 @@ void initClientes(eCliente[],int);
  *
  */
 
-void mostrarClientes(eCliente[],int); //OPCION 1
+void mostrarClientes(eCliente[],int,eLocalidad localidades); //OPCION 1
 
 
 /** \brief Muestro el porcentaje que tengo de mujeres entre el total de clientes

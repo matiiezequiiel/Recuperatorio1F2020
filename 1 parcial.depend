@@ -107,3 +107,53 @@
 	<string.h>
 	<stdio.h>
 
+1591538959 source:c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\clientes-mascotas.c
+	"Clientes-Mascotas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591539078 c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\clientes-mascotas.h
+	"Clientes.h"
+	"Mascotas.h"
+	"Raza.h"
+	"Validaciones.h"
+
+1591539335 c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\clientes.h
+
+1591539150 c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\mascotas.h
+
+1591539378 c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\raza.h
+
+1589837125 c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\validaciones.h
+
+1591540492 source:c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\clientes.c
+	"Clientes.h"
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591536960 source:c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Clientes-Mascotas.h"
+
+1591537693 source:c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\mascotas.c
+	"Mascotas.h"
+	"Clientes.h"
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591537102 source:c:\users\matii\desktop\nueva carpeta\recuperatorio1f2020\validaciones.c
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

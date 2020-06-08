@@ -1,6 +1,7 @@
 #define TCLIENTE 5
 #define TMASCOTA 11
 #define TRAZA 6
+#define TLOCALIDAD 3
 #define INACTIVO 0
 #define ACTIVO 1
 #include<stdio.h>
@@ -15,6 +16,7 @@ int main()
     eCliente clientes[TCLIENTE];
     eMascota mascotas[TMASCOTA];
     eRaza razas[TRAZA];
+    eLocalidad localidad[TCLIENTE];
     int opcion;
     int retorno;
     int id;
@@ -25,6 +27,7 @@ int main()
     hardcodearClientes(clientes,TCLIENTE);
     hardcodearMascotas(mascotas,TMASCOTA);
     hardcodearRaza(razas,TRAZA);
+    hardcodearLocalidad(localidades,TLOCALIDAD);
     //  initMascotas(mascotas,TMASCOTA);
     // initClientes(clientes,TCLIENTE);
 

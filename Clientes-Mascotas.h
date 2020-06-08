@@ -2,6 +2,7 @@
 #include"Mascotas.h"
 #include"Raza.h"
 #include"Validaciones.h"
+#include"Localidad.h"
 
 typedef struct
 {

@@ -12,7 +12,7 @@ void hardcodearClientes(eCliente listaClientes[],int sizeClientes)
 
     char nombre[5][20]= {"Matias","Ariel","Claudia","Benjamin","Anastasia"};
     char apellido[5][20]= {"Aguirre","Campos","Barraza","Villegas","Anido"};
-    char localidad [5][20]= {"Lanus","Avellaneda","Gerli","Banfield","Temperley"};
+    int localidad [5]=  {1,2,3,1,2};
     char telefono [5][10]= {"4267-1667","4267-1668","4267-1669","4267-1670","4267-1671"};
     int edad[5]= {20,25,30,35,40};
     char sexo [5]= {'M','M','F','M','F'};
