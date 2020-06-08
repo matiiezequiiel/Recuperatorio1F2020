@@ -4,6 +4,7 @@
 #include"Validaciones.h"
 #include"Localidad.h"
 
+
 typedef struct
 {
     int idCliente;
@@ -198,5 +199,14 @@ void ordenarClientesPorCantMascotas(eMascota[],int,eCliente[],int);//OPCION 14
 void ordenarClientesPorCantMascotasYnombre(eMascota[],int,eCliente[],int);//OPCION 15
 
 
+//NUEVO
 
+
+
+
+
+void mostrarClientesConLocalidad(eCliente[],int,eMascota[],int,eRaza[],int,eLocalidad [],int);
+int altaClienteConLocalidad(eCliente[],int,eLocalidad[],int );
+int cargarCamposClienteConLocalidad(eCliente listaClientes[],int posicionLibre,eLocalidad[],int);
+void listarClientesMascotasMismoTipo(eMascota [],int ,eCliente  [],int ,eLocalidad [],int );
 

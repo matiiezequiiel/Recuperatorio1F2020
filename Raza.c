@@ -1,3 +1,4 @@
+
 #include "Raza.h"
 #include <string.h>
 #include <stdio.h>
@@ -32,4 +33,3 @@ void mostrarRaza(eRaza listadoRazas[], int sizeRazas)
         printf("%s\n",listadoRazas[i].pais);
     }
 }
-

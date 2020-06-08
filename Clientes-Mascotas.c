@@ -1037,6 +1037,301 @@ void ordenarClientesPorCantMascotasYnombre(eMascota listadoMascotas[],int sizeMa
 
 }
 
+//NUEVO
+
+
+void mostrarClientesConLocalidad(eCliente listaClientes[],int sizeClientes,eMascota listadoMascotas[],int sizeMascotas,eRaza listadoRazas[],int sizeRaza,eLocalidad localidades[],int sizeLocalidad)
+{
+    int i;
+    int j;
+    int k;
+    int l;
+    int contMascotas;
+    int contClientes=0;
+
+    for(i=0; i<sizeClientes; i++)
+    {
+        contMascotas=0;
+        if(listaClientes[i].estado==1)
+        {
+            printf("\n\nCliente: %s %s",listaClientes[i].nombre,listaClientes[i].apellido);
+
+             for(l=0;l<sizeLocalidad;l++)
+            {
+                if(listaClientes[i].idLocalidad==localidades[i].idLocalidad)
+                {
+                      printf("\t LOCALIDAD:%s",localidades[i].descripcion);
+                      break;
+                }
+            }
+            printf("\nMascotas a cargo del cliente:");
+            printf("\nNOMBRE          TIPO    RAZA            EDAD    PESO    SEXO");
+            contMascotas=0;
+            contClientes++;
+        }
+        else
+        {
+            continue;
+        }
+
+
+        for(j=0; j<sizeMascotas; j++)
+        {
+
+            if(listaClientes[i].id==listadoMascotas[j].idDelDuenio && listadoMascotas[j].estado==1 )
+            {
+                printf("\n%s    \t",listadoMascotas[j].nombre);
+                printf("%s\t",listadoMascotas[j].tipo);
+                for(k=0; k<sizeRaza; k++)
+                {
+                    if(listadoMascotas[j].idRaza==listadoRazas[k].idRaza)
+                    {
+                        printf("%s   \t",listadoRazas[k].nombreRaza);
+                        break;
+                    }
+                }
+
+                printf("%d\t",listadoMascotas[j].edad);
+                printf("%.2f\t",listadoMascotas[j].peso);
+                printf("%c\t",listadoMascotas[j].sexo);
+                contMascotas++;
+            }
+
+        }
+
+        if(contMascotas==0)
+        {
+            printf("\nNO TIENE MASCOTAS.\n\n");
+        }
+        if(contClientes==0)
+        {
+            printf("\nNO TIENE MASCOTAS.\n\n");
+        }
+    }
+    if(contClientes==0)
+    {
+        printf("\nNO TIENE CLIENTES CARGADOS.\n\n");
+    }
+    printf("\n\n");
+    system("pause");
+
+}
 
 
 
+int altaClienteConLocalidad(eCliente listaClientes[],int sizeClientes,eLocalidad localidades[] ,int sizeLocalidad)
+{
+    int posicionLibre;
+    int confirmacion;
+
+    posicionLibre=buscarLibreArrayCliente(listaClientes,sizeClientes);
+
+    system("cls");
+
+    if(posicionLibre!=-1)
+
+    {
+        confirmacion=cargarCamposClienteConLocalidad(listaClientes,posicionLibre,localidades,sizeLocalidad);
+
+
+        if (confirmacion==1)
+        {
+            listaClientes[posicionLibre].estado=1;
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+
+
+    }
+    else
+    {
+        printf("No hay espacio.");
+        return 0;
+    }
+
+
+
+}
+
+int cargarCamposClienteConLocalidad(eCliente listaClientes[],int posicionLibre,eLocalidad localidades[] ,int sizeLocalidad)
+{
+    char entrada[10];
+    char sexo;
+    char opcion[5];
+    int confirmacion;
+
+    //CARGA NOMBRE
+    printf("Ingrese nombre de el cliente: ");
+    fflush(stdin);
+    gets(listaClientes[posicionLibre].nombre);
+    formatearNombres(listaClientes[posicionLibre].nombre);
+    while(validarCadena(listaClientes[posicionLibre].nombre)==0)
+    {
+        system("cls");
+        printf("Nombre invalido, reeingrese nombre: ");
+        gets(listaClientes[posicionLibre].nombre);
+        formatearNombres(listaClientes[posicionLibre].nombre);
+        validarCadena(listaClientes[posicionLibre].nombre);
+
+    }
+
+    //CARGA APELLIDO
+    printf("\nIngrese apellido del cliente :");
+    fflush(stdin);
+    gets(listaClientes[posicionLibre].apellido);
+    formatearNombres(listaClientes[posicionLibre].apellido);
+
+    while(validarCadena(listaClientes[posicionLibre].apellido)==0)
+    {
+        system("cls");
+        printf("Apellido invalido, reeingrese el apellido: ");
+        gets(listaClientes[posicionLibre].apellido);
+        validarCadena(listaClientes[posicionLibre].apellido);
+        validarTipoMascota(listaClientes[posicionLibre].apellido);
+    }
+
+    //CARGA LOCALIDAD
+    printf("\nIngrese id de la localidad de residencia del cliente: \n");
+    mostrarLocalidades(localidades,sizeLocalidad);
+    fflush(stdin);
+    listaClientes[posicionLibre].idLocalidad=getInt(entrada);
+
+    //CARGA TELEFONO
+    printf("\nIngrese telefono del cliente, el formato valido es XXXX-XXXX: ");
+    fflush(stdin);
+    gets(listaClientes[posicionLibre].telefono);
+
+    while(validarTelefono(listaClientes[posicionLibre].telefono)==1)
+    {
+        system("cls");
+        printf("Telefono invalido, el formato valido es XXXX-XXXX : ");
+        gets(listaClientes[posicionLibre].telefono);
+        validarTelefono(listaClientes[posicionLibre].telefono);
+
+    }
+
+    //CARGA EDAD
+    printf("\nIngrese edad de el cliente: ");
+    fflush(stdin);
+    gets(entrada);
+    listaClientes[posicionLibre].edad=getInt(entrada);
+
+    //CARGA SEXO
+    printf("\nIngrese sexo del cliente F/M: ");
+    fflush(stdin);
+    scanf("%c",&sexo);
+    listaClientes[posicionLibre].sexo=getChar(sexo);
+
+    while(validarSexoClientes(listaClientes[posicionLibre].sexo)==0)
+    {
+        printf("\n\nSexo invalido, ingrese F/M :");
+        fflush(stdin);
+        scanf("%c",&sexo);
+        listaClientes[posicionLibre].sexo=getChar(sexo);
+        validarSexoClientes(listaClientes[posicionLibre].sexo);
+    }
+    listaClientes[posicionLibre].sexo=toupper(listaClientes[posicionLibre].sexo);
+
+    system("cls");
+
+    printf("Ingrese 1 para confirmar.\n");
+    printf("Ingrese 2 para salir.\n\n");
+    printf("Opcion elegida: ");
+
+    fflush(stdin);
+    gets(opcion);
+
+    confirmacion=validarIntEntreRangos(opcion,1,2);
+
+    return confirmacion;
+
+
+}
+
+
+void listarClientesMascotasMismoTipo(eMascota listadoMascotas[],int sizeMascotas,eCliente listadoClientes [],int sizeClientes,eLocalidad localidades[],int sizeLocalidad)
+{
+
+    int i;
+    int j;
+    int l;
+    int contPerros;
+    int contGatos;
+    int contRaros;
+    int contClientes;
+
+    printf("ID      NOMBRE          APELLIDO        LOCALIDAD       TELEFONO       EDAD   SEXO   \n");
+
+    for(i=0; i<sizeClientes; i++)
+    {
+
+        contGatos=0;
+        contPerros=0;
+        contRaros=0;
+
+
+        if(listadoClientes[i].estado==1)
+        {
+            contClientes++;
+            for(j=0; j<sizeMascotas; j++)
+            {
+                if(listadoClientes[i].id==listadoMascotas[j].idDelDuenio)
+                {
+                    if(strcmp(listadoMascotas[j].tipo,"Perro")==0)
+                    {
+                        contPerros++;
+                    }
+                    else
+                    {
+                        if(strcmp(listadoMascotas[j].tipo,"Gato")==0)
+                        {
+                            contGatos++;
+                        }
+                        else
+                        {
+                            contRaros++;
+                        }
+                    }
+
+
+                }
+            }
+
+            if((contPerros>0 && contGatos==0 && contRaros==0) || (contGatos>0 && contRaros==0 && contPerros==0) || (contRaros>0 && contGatos==0 && contPerros==0))
+            {
+                printf("%d\t",listadoClientes[i].id);
+                printf("%s   \t",listadoClientes[i].nombre);
+                printf("%s   \t",listadoClientes[i].apellido);
+
+                 for(l=0;l<sizeLocalidad;l++)
+                {
+                    if(listadoClientes[i].idLocalidad==localidades[i].idLocalidad)
+                    {
+                        printf("%s   \t",localidades[i].descripcion);
+                          break;
+                    }
+                }
+
+                printf("%s\t",listadoClientes[i].telefono);
+                printf("%d\t",listadoClientes[i].edad);
+                printf("%c\t\n",listadoClientes[i].sexo);
+            }
+        }
+        else
+        {
+            continue;
+        }
+
+
+    }
+
+    if(contClientes==0)
+    {
+        printf("NO HAY CLIENTES CARGADOS\n\n");
+    }
+    system("pause");
+
+}

@@ -12,7 +12,8 @@ void hardcodearClientes(eCliente listaClientes[],int sizeClientes)
 
     char nombre[5][20]= {"Matias","Ariel","Claudia","Benjamin","Anastasia"};
     char apellido[5][20]= {"Aguirre","Campos","Barraza","Villegas","Anido"};
-    int localidad [5]=  {1,2,3,1,2};
+    char localidad [5][20]= {"Lanus","Avellaneda","Gerli","Banfield","Temperley"};
+    int idLocalidad[5] = {1,2,3,1,2};
     char telefono [5][10]= {"4267-1667","4267-1668","4267-1669","4267-1670","4267-1671"};
     int edad[5]= {20,25,30,35,40};
     char sexo [5]= {'M','M','F','M','F'};
@@ -26,6 +27,7 @@ void hardcodearClientes(eCliente listaClientes[],int sizeClientes)
         strcpy(listaClientes[i].nombre,nombre[i]);
         strcpy(listaClientes[i].apellido,apellido[i]);
         strcpy(listaClientes[i].localidad,localidad[i]);
+        listaClientes[i].idLocalidad=idLocalidad[i];
         strcpy(listaClientes[i].telefono,telefono[i]);
         listaClientes[i].edad=edad[i];
         listaClientes[i].sexo=sexo[i];

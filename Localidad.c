@@ -1,3 +1,7 @@
+#include"Localidad.h"
+#include<string.h>
+#include<stdio.h>
+
 void hardcodearLocalidad(eLocalidad listaLocalidades[],int sizeLocalidades)
 {
 
@@ -11,11 +15,23 @@ void hardcodearLocalidad(eLocalidad listaLocalidades[],int sizeLocalidades)
     {
 
         strcpy(listaLocalidades[i].provincia,provincia[i]);
-        strcpy(sizeLocalidades[i].descripcion,descripcion[i]);
-        sizeLocalidades[i].codPostal=codPostal[i];
-        sizeLocalidades[i].idProvincia=idProvincia[i];
+        strcpy(listaLocalidades[i].descripcion,descripcion[i]);
+        listaLocalidades[i].codPostal=codPostal[i];
+        listaLocalidades[i].idLocalidad=idProvincia[i];
 
     }
 
+
+}
+
+void mostrarLocalidades(eLocalidad listaLocalidades[],int sizeLocalidades)
+{
+    int i;
+    for(i=0; i<sizeLocalidades;i++)
+    {
+
+        printf("%d----%s-----%s\n",listaLocalidades[i].idLocalidad,listaLocalidades[i].provincia,listaLocalidades[i].descripcion);
+
+    }
 
 }

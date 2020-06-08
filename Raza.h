@@ -1,3 +1,4 @@
+
 typedef struct
 {
     char nombreRaza[20];

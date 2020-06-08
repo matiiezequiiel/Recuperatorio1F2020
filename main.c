@@ -16,7 +16,7 @@ int main()
     eCliente clientes[TCLIENTE];
     eMascota mascotas[TMASCOTA];
     eRaza razas[TRAZA];
-    eLocalidad localidad[TCLIENTE];
+    eLocalidad localidad[TLOCALIDAD];
     int opcion;
     int retorno;
     int id;
@@ -27,7 +27,7 @@ int main()
     hardcodearClientes(clientes,TCLIENTE);
     hardcodearMascotas(mascotas,TMASCOTA);
     hardcodearRaza(razas,TRAZA);
-    hardcodearLocalidad(localidades,TLOCALIDAD);
+    hardcodearLocalidad(localidad,TLOCALIDAD);
     //  initMascotas(mascotas,TMASCOTA);
     // initClientes(clientes,TCLIENTE);
 
@@ -50,11 +50,14 @@ int main()
             break;
         case 3:
             system("cls");
-            mostrarClientesConSusAnimales(clientes,TCLIENTE,mascotas,TMASCOTA,razas,TMASCOTA);
+           // mostrarClientesConSusAnimales(clientes,TCLIENTE,mascotas,TMASCOTA,razas,TMASCOTA);
+            mostrarClientesConLocalidad(clientes,TCLIENTE,mascotas,TMASCOTA,razas,TRAZA,localidad,TLOCALIDAD);
+
             break;
         case 4:
             system("cls");
             retorno=altaMascota(mascotas,TMASCOTA,clientes,TCLIENTE,razas,TRAZA);
+
             if(retorno)
             {
                 printf("Alta exitosa.\n\n");
@@ -114,7 +117,8 @@ int main()
 
         case 7:
             system("cls");
-            retorno=altaCliente(clientes,TCLIENTE);
+            //retorno=altaCliente(clientes,TCLIENTE);
+             retorno=altaClienteConLocalidad(clientes,TCLIENTE,localidad,TLOCALIDAD);
             if(retorno)
             {
                 printf("Alta exitosa.\n\n");
@@ -209,7 +213,8 @@ int main()
             break;
         case 19:
             system("cls");
-            listarClientesMascotasMismoSexo(mascotas,TMASCOTA,clientes,TCLIENTE);
+            //listarClientesMascotasMismoSexo(mascotas,TMASCOTA,clientes,TCLIENTE);
+            listarClientesMascotasMismoTipo(mascotas,TMASCOTA,clientes,TCLIENTE,localidad,TLOCALIDAD);
             break;
         case 20:
             system("cls");
