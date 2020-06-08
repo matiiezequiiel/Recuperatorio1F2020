@@ -1,0 +1,109 @@
+# depslib dependency file v1.0
+1589246348 source:c:\users\matii\desktop\parcial\1 parcial parte 2\1 parcial parte 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1589844287 source:c:\users\matii\desktop\parcial\1 parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Clientes-Mascotas.h"
+
+1589838671 source:c:\users\matii\desktop\parcial\1 parcial\clientes.c
+	"Clientes.h"
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1589837144 c:\users\matii\desktop\parcial\1 parcial\clientes.h
+
+1589843818 c:\users\matii\desktop\parcial\1 parcial\mascotas.h
+
+1589837125 c:\users\matii\desktop\parcial\1 parcial\validaciones.h
+
+1589842107 source:c:\users\matii\desktop\parcial\1 parcial\clientes-mascotas.c
+	"Clientes-Mascotas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1589840254 c:\users\matii\desktop\parcial\1 parcial\clientes-mascotas.h
+	"Clientes.h"
+	"Mascotas.h"
+	"Validaciones.h"
+
+1589817471 source:c:\users\matii\desktop\parcial\1 parcial\validaciones.c
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1589843826 source:c:\users\matii\desktop\parcial\1 parcial\mascotas.c
+	"Mascotas.h"
+	"Clientes.h"
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591538959 source:c:\users\matii\desktop\nueva carpeta\1 parcial\clientes-mascotas.c
+	"Clientes-Mascotas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591539078 c:\users\matii\desktop\nueva carpeta\1 parcial\clientes-mascotas.h
+	"Clientes.h"
+	"Mascotas.h"
+	"Raza.h"
+	"Validaciones.h"
+
+1591539335 c:\users\matii\desktop\nueva carpeta\1 parcial\clientes.h
+
+1591539150 c:\users\matii\desktop\nueva carpeta\1 parcial\mascotas.h
+
+1589837125 c:\users\matii\desktop\nueva carpeta\1 parcial\validaciones.h
+
+1591540492 source:c:\users\matii\desktop\nueva carpeta\1 parcial\clientes.c
+	"Clientes.h"
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591536960 source:c:\users\matii\desktop\nueva carpeta\1 parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Clientes-Mascotas.h"
+
+1591537102 source:c:\users\matii\desktop\nueva carpeta\1 parcial\validaciones.c
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591537693 source:c:\users\matii\desktop\nueva carpeta\1 parcial\mascotas.c
+	"Mascotas.h"
+	"Clientes.h"
+	"Validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1591539378 c:\users\matii\desktop\nueva carpeta\1 parcial\raza.h
+
+1591539432 source:c:\users\matii\desktop\nueva carpeta\1 parcial\raza.c
+	"Raza.h"
+	<string.h>
+	<stdio.h>
+
